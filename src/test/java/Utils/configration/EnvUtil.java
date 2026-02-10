@@ -37,22 +37,26 @@ public class EnvUtil {
         switch (env)
         {
             case "staging":
-               prop = ConfigUtil.ReadConfig("D:\\New folder\\cucumber-to-do-project\\src\\test\\resources\\properties\\Staging.properties");
+                // شيلنا المسار الطويل وحطينا src علطول
+                // واستخدمنا (/) بدل (\\) عشان تشتغل على ويندوز ولينكس
+                prop = ConfigUtil.ReadConfig("src/test/resources/properties/Staging.properties");
                 break;
             case "production":
-               prop = ConfigUtil.ReadConfig("D:\\New folder\\cucumber-to-do-project\\src\\test\\resources\\properties\\Production.properties");
+                // شيلنا المسار الطويل وحطينا src علطول
+                // واستخدمنا (/) بدل (\\) عشان تشتغل على ويندوز ولينكس
+                prop = ConfigUtil.ReadConfig("src/test/resources/properties/production.properties");
                 break;
             default:
                 throw new RuntimeException("env not supported");
         }
     }
 
-    /*
-    * ده "المدير" 👮‍♂️:
-الدالة دي بتقول: "يا جماعة، لو الختم لسه مش موجود (null)،
+     /*
+     * ده "المدير" 👮‍♂️:
+الدالة دي بتقول: "يا جماعة، لو الختم لسه مش موجود (null) ،
 *  أنا هنزل أشتريه (new EnvUtil). لو موجود، خلاص استخدموا اللي موجود".
-ده بيضمن إن ملف الإعدادات يتفتح ويتقرأ مرة واحدة بس في حياة البرنامج كله
-    * */
+     ده بيضمن إن ملف الإعدادات يتفتح ويتقرأ مرة واحدة بس في حياة البرنامج كله
+     * */
     public static EnvUtil getInstance() throws IOException {
         if (envUtil == null){
             envUtil = new EnvUtil();
