@@ -32,8 +32,10 @@ src
         └── com.qacart.todo
             ├── runners     # Test Runners
             └── steps       # Step Definitions
+```
 
 ## 🚀 How to Run Locally
+
 1. Prerequisites
 Java JDK 21 installed.
 
@@ -42,22 +44,19 @@ Maven installed and configured.
 Chrome or Edge browser installed.
 
 2. Clone the Repository
-Bash
 git clone [https://github.com/arkan2320/cucumber-todo-project.git](https://github.com/arkan2320/cucumber-todo-project.git)
 cd cucumber-todo-project
 
 
 3. Run Tests
 Run on Default (Chrome + Staging):
-
-Bash
 mvn clean test
 
 
 ## Run on Production Environment:
 
-Bash
 mvn clean test -Denv="production"
+
 
 ## ⚙️ CI/CD Pipeline (GitHub Actions)
 The project includes a fully functional workflow defined in .github/workflows/maven.yml:
